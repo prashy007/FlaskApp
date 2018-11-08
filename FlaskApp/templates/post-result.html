@@ -1,0 +1,27 @@
+{% extends "header.html" %}
+{% block body %}
+<body>
+	<div class="container">
+     {% from "_formhelpers.html" import render_field %}
+    <table border="1" cellpadding="5" cellspacing="5">
+
+			<br>
+			<th>Message</th>
+			 <th>Msg_No</th>
+         {% for row in result %}
+             <tr>
+             {% for d in row %}
+                  <td>{{ d }}</td>
+             {% endfor %}
+             </tr>
+         {% endfor %}
+				 <p>Please remember msg_no for future use</p>
+     </table>
+		 <p>You can see your message &nbsp &nbsp &nbsp<a href='http://127.0.0.1:5000/all/'>Click here for all message &nbsp &nbsp &nbsp</a>
+		 <a href='http://127.0.0.1:5000/specific/'>Click here for specific message</a> </p>
+		{% if error %}
+			<p class="error"><strong>Error:</strong>{{error}}</p>
+		{% endif %}
+</div>
+</body>
+{% endblock %}

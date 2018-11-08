@@ -1,0 +1,23 @@
+{% extends "header.html" %}
+{% block body %}
+<body>
+	<div class="container">
+     {% from "_formhelpers.html" import render_field %}
+    <table border="1" cellpadding="5" cellspacing="5">
+			<br>
+             <tr>
+             {{result}}
+             </tr>
+				 <br>
+             <tr>
+             {{res}}
+             </tr>
+     </table>
+		 <p><a href='http://127.0.0.1:5000/delete/'>Do you want to delete this message?</a></p>
+		{% if error %}
+			<p class="error"><strong>Error:</strong>{{error}}</p>
+		{% endif %}
+
+</div>
+</body>
+{% endblock %}

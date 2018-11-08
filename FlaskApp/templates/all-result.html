@@ -1,0 +1,24 @@
+{% extends "header.html" %}
+{% block body %}
+<body>
+	<div class="container">
+     {% from "_formhelpers.html" import render_field %}
+     <table border="1" cellpadding="5" cellspacing="5">
+       <th>Message</th>
+        <th>Msg_No</th>
+         {% for row in result %}
+             <tr>
+             {% for d in row %}
+                  <td>{{ d }}</td>
+             {% endfor %}
+             </tr>
+         {% endfor %}
+     </table>
+		 <p><a href='http://127.0.0.1:5000/delete/'>Do you want to delete any message?</a></p>
+		{% if error %}
+			<p class="error"><strong>Error:</strong>{{error}}</p>
+		{% endif %}
+
+</div>
+</body>
+{% endblock %}
