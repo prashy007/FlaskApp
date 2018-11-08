@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y apache2 \
  && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get install mysql-server
+RUN apt-get install mysql.connector
 
 RUN a2enmod wsgi
 
@@ -37,7 +38,7 @@ COPY ./FlaskApp /var/www/FlaskApp/
 
 
 RUN service apache2 restart
-RUN service mysql start
+
 
 
 EXPOSE 80
