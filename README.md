@@ -25,11 +25,11 @@
 ###Now,
 
 ##Create a configuration file inside ###/etc/apache2/sites-available/
->mkdir /etc/apache2/sites-available/FlaskApp.conf
->nano /etc/apache2/sites-available/FlaskApp.conf
+>mkdir /etc/apache2/sites-available/FlaskApp.conf 
+>nano /etc/apache2/sites-available/FlaskApp.conf 
 
 ##Inputting:
-><VirtualHost *:80>
+/<VirtualHost *:80>
 		ServerName IP of machine
 		ServerAdmin admin@mywebsite.com
 		WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
@@ -56,9 +56,9 @@
 >service apache2 restart
 
 ##Now we will start preparing our Flask application. Let’s set up some directories:
->mkdir /var/www/FlaskApp
->cd /var/www/FlaskApp
->nano flaskApp.wsgi
+/mkdir /var/www/FlaskApp
+cd /var/www/FlaskApp
+nano flaskApp.wsgi
 
 ##Now we will setup WSGI to interface with our application:
 
