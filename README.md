@@ -1,3 +1,4 @@
+```bash
 ##Once you are in the server, let's start with an update and upgrade:
 >sudo apt-get update && sudo apt-get upgrade
 
@@ -24,12 +25,12 @@
 
 ###Now,
 
-##Create a configuration file inside ###/etc/apache2/sites-available/
->mkdir /etc/apache2/sites-available/FlaskApp.conf 
->nano /etc/apache2/sites-available/FlaskApp.conf 
+###Create a configuration file inside ###/etc/apache2/sites-available/
+mkdir /etc/apache2/sites-available/FlaskApp.conf 
+nano /etc/apache2/sites-available/FlaskApp.conf 
 
 ##Inputting:
-/<VirtualHost *:80>
+<VirtualHost *:80>
 		ServerName IP of machine
 		ServerAdmin admin@mywebsite.com
 		WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
@@ -46,6 +47,7 @@
 		LogLevel warn
 		CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
+
 
 ###Save and Exit
 
