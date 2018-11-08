@@ -63,21 +63,21 @@
 ##Now we will setup WSGI to interface with our application:
 
 ##In flaskApp.wsgi,  put:
->#!/usr/bin/python
->import sys
->import logging
->logging.basicConfig(stream=sys.stderr)
->sys.path.insert(0,"/var/www/FlaskApp/")
+#!/usr/bin/python
+import sys
+import logging
+logging.basicConfig(stream=sys.stderr)
+sys.path.insert(0,"/var/www/FlaskApp/")
 
->from FlaskApp import app as application
+from FlaskApp import app as application
 
 ##Save and exit. Our FlaskApp.conf file points to this WSGI file. This WSGI script imports app from FlaskApp. 
 
 ##Now we will setup our FlaskApp application:
->mkdir /var/www/FlaskApp/FlaskApp 
->cd /var/www/FlaskApp/FlaskApp
->mkdir /var/www/FlaskApp/FlaskApp/static
->mkdir /var/www/FlaskApp/FlaskApp/templates
+mkdir /var/www/FlaskApp/FlaskApp 
+cd /var/www/FlaskApp/FlaskApp
+mkdir /var/www/FlaskApp/FlaskApp/static
+mkdir /var/www/FlaskApp/FlaskApp/templates
 
 ###The directory structure for FlaskApp programing should be.
 /var/www/
